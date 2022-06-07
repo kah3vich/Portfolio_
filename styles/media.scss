@@ -2,7 +2,7 @@
 
 @media (max-width: 615px) {
 	#__three {
-		width: 630px !important;
+		width: 930px !important;
 		height: 630px !important;
 	}
 	.navbar {
@@ -28,10 +28,6 @@
 }
 
 @media (max-width: 490px) {
-	#__three {
-		width: 430px !important;
-		height: 630px !important;
-	}
 	.navbar__b {
 		margin: 0;
 	}
@@ -42,10 +38,6 @@
 }
 
 @media (max-width: 400px) {
-	#__three {
-		width: 450px !important;
-		height: 630px !important;
-	}
 	.navbar__l h1 {
 		font-size: 16px;
 	}
@@ -73,9 +65,9 @@
 		position: relative;
 		min-height: 170px !important;
 		& span {
-			width: 100%;
+			width: 100% !important;
 			& img {
-				width: 100%;
+				width: 100% !important;
 			}
 		}
 	}
