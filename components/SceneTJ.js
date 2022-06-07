@@ -67,10 +67,13 @@ const SceneTJ = () => {
 
 			// Update camera
 			camera.aspect = 1.5
-			camera.updateProjectionMatrix()
+			if (window.innerHeight < 610) {
+				camera.updateProjectionMatrix()
+			}
 
 			// Update renderer
-			renderer.setSize(1440, 630)
+			//
+			// renderer.setSize(1440, 630)
 		})
 
 		// Camera
