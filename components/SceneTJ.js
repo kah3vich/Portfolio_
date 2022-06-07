@@ -72,7 +72,6 @@ const SceneTJ = () => {
 			}
 
 			// Update renderer
-			//
 			// renderer.setSize(1440, 630)
 		})
 
