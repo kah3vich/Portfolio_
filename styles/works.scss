@@ -1,0 +1,70 @@
+//! Works
+
+.works {
+	width: 100%;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin: 0 0 45px 0;
+	&__t {
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.33;
+		margin: 10px 0 25px 0;
+		color: var(--colors);
+		transition: var(--transt);
+	}
+	&__l {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+		transition: var(--transt);
+		width: 100%;
+		gap: 35px 25px;
+	}
+	&__i {
+		position: relative;
+	}
+	&__w {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		width: 100%;
+	}
+	&__p {
+		min-width: 230px !important;
+		position: relative;
+		min-height: 100px !important;
+		& svg {
+			position: absolute;
+			top: 9px;
+			right: 9px;
+			z-index: 2;
+			& path {
+				fill: coral;
+			}
+		}
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 8px;
+		}
+	}
+	&__title {
+		margin: 15px 0 0 0;
+		width: 100%;
+		text-align: left;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	&__description {
+		margin: 15px 0 0 0;
+		text-align: left;
+		width: 100%;
+		font-size: 15px;
+		font-weight: 400;
+	}
+}

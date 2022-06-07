@@ -1,0 +1,15 @@
+//! Footer
+
+footer {
+	opacity: 0.4;
+	background: transparent;
+	text-align: center;
+	font-size: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--colors);
+	transition: var(--transt);
+	text-transform: uppercase;
+	padding: 16px 0 32px 0;
+}

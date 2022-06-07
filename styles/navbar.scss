@@ -1,0 +1,113 @@
+//! Navbar
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 760px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 16px;
+	&__l {
+		margin: 0;
+		& h1 {
+			line-height: 20px;
+			font-weight: bold;
+			font-size: 18px;
+			color: var(--colors);
+			transition: var(--transt);
+		}
+	}
+	&__b {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 0 35px;
+	}
+	&__link {
+		margin: 0 0 0 8px;
+		padding: 8px;
+		position: relative;
+		color: var(--colors);
+		transition: var(--transt);
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			bottom: 0px;
+			width: 0%;
+			height: 1px;
+			background: var(--colors);
+			transition: var(--transt);
+		}
+		&:hover::after {
+			width: 80%;
+		}
+	}
+	&__p {
+		margin: 0 0 0 8px;
+		padding: 8px;
+		gap: 4px;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		color: var(--colors);
+		transition: var(--transt);
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			bottom: 0px;
+			width: 0%;
+			height: 1px;
+			background: var(--colors);
+			transition: var(--transt);
+		}
+		&:hover::after {
+			width: 80%;
+		}
+	}
+}
+
+//! Container button theme
+
+.theme {
+	position: relative;
+	width: 45px;
+	height: 45px;
+	margin: 0 30px 0 0;
+	transition: var(--transt);
+}
+
+//! Buttons Theme
+
+.buttons {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	transform: translate(-50%, -50%);
+	transition: var(--transt);
+	&__a {
+		opacity: 0;
+		visibility: hidden;
+	}
+	&__dark {
+		background: var(--bg-dark);
+		transition: var(--transt);
+	}
+	&__light {
+		background: var(--bg-light);
+		transition: var(--transt);
+	}
+}

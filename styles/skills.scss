@@ -1,0 +1,146 @@
+//! Skills
+
+.skills {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 0 0 55px 0;
+	margin: -30px 0 0 0;
+	&__t {
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.33;
+		margin: 50px 0 25px 0;
+		color: var(--colors);
+		transition: var(--transt);
+	}
+	&__l {
+		margin: 30px 0 0 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		& li {
+			width: 100%;
+			height: 6px;
+			border: 20px;
+			background: transparent;
+			border: 1px solid var(--colors);
+			transition: var(--transt);
+			position: relative;
+			margin: 0 0 65px 0;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	&__progress-bar {
+		width: 100%;
+		height: 6px;
+		border: 20px;
+		background: transparent;
+		border: 1px solid var(--colors);
+		transition: var(--transt);
+		position: relative;
+		margin: 0 0 65px 0;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	&__progress {
+		position: absolute;
+		right: 0;
+		top: -30px;
+		font-size: 17px;
+		font-weight: bold;
+		line-height: 1.33;
+		color: var(--colors);
+		transition: var(--transt);
+	}
+	&__title {
+		position: absolute;
+		top: -30px;
+		left: 0;
+		font-size: 17px;
+		font-weight: bold;
+		line-height: 1.33;
+		color: var(--colors);
+		transition: var(--transt);
+	}
+	&__bar {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0%, -50%);
+		width: -1px;
+		height: 100%;
+		transition: all 1s ease;
+		background: var(--colors);
+		border: 1px solid var(--colors);
+		transition: var(--transt);
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		gap: 1px;
+	}
+	&__b {
+		background: var(--color-blue);
+		padding: 10px 25px;
+		transition: var(--transt);
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 40px 0 0 auto;
+		width: max-content;
+		& p {
+			margin: 0 0 0 0;
+			width: 100%;
+			line-height: 1.2;
+			font-size: 16px;
+			font-weight: bold;
+			transition: var(--transt);
+			color: #000;
+		}
+		& span {
+			margin: 0 0 0 8px;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			line-height: 16px;
+			-webkit-flex-shrink: 0;
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+			vertical-align: middle;
+		}
+	}
+	&__elem {
+		display: flex;
+		height: 80px;
+		overflow: hidden;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		outline: 1px solid var(--colors);
+		transition: var(--transt);
+		& svg {
+			width: 30px;
+			height: 30px;
+			margin: 0 0 4px 0;
+			& path {
+				fill: var(--colors);
+				transition: var(--transt);
+			}
+		}
+		& p {
+			font-size: 13px;
+			font-weight: bold;
+			line-height: 1.33;
+			color: var(--colors);
+			transition: var(--transt);
+		}
+	}
+}

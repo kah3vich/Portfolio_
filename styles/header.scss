@@ -1,0 +1,13 @@
+//! Header
+
+header {
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	position: fixed;
+	width: 100%;
+	background: var(--bg-header);
+	transition: var(--transt);
+	z-index: 1;
+	backdrop-filter: blur(10px);
+}

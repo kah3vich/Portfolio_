@@ -1,0 +1,98 @@
+//! Work
+
+.work {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	&__h {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		& svg {
+			margin: 0 6px;
+			stroke: var(--colors);
+			transition: var(--transt);
+		}
+	}
+	&__link {
+		color: var(--color-dark-blue);
+		transition: var(--transt);
+		font-weight: 500;
+		font-size: 19px;
+	}
+	&__t {
+		color: var(--colors);
+		transition: var(--transt);
+		font-weight: 600;
+		font-size: 23px;
+	}
+	&__year {
+		background: var(--bg-add);
+		padding: 3px;
+		border-radius: 4px;
+		margin: 0 0 0 6px;
+		color: var(--colors);
+		transition: var(--transt);
+		font-weight: 500;
+		font-size: 12px;
+	}
+	&__description {
+		margin: 20px 0 0 0;
+		text-align: justify;
+		text-indent: 1em;
+		line-height: 1.5;
+		font-size: 16px;
+		color: var(--colors);
+		transition: var(--transt);
+		font-weight: 600;
+	}
+	&__i {
+		margin: 20px 0 35px 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	&__items {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0 0 15px 0;
+		&:last-child {
+			margin: 0 0 0 0;
+		}
+		& span {
+			background: var(--bg-green);
+			color: var(--colors-green);
+			transition: var(--transt);
+			padding: 3px 6px;
+			border-radius: 4px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 16px;
+			font-weight: 600;
+		}
+		& a {
+			color: var(--color-dark-blue);
+			transition: var(--transt);
+			font-size: 18px;
+			font-weight: 500;
+			margin: 0 0 0 10px;
+		}
+		& p {
+			color: var(--colors);
+			transition: var(--transt);
+			font-size: 18px;
+			font-weight: 500;
+			margin: 0 0 0 10px;
+		}
+	}
+	&__photo {
+		& img {
+			object-fit: contain;
+		}
+	}
+}
