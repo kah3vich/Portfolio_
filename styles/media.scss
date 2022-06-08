@@ -29,6 +29,15 @@
 		font-size: 15px;
 		line-height: 27px;
 	}
+	.work__items {
+		align-items: center;
+		margin: 0 0 15px;
+		width: 100%;
+	}
+	.work__items a {
+		word-wrap: break-word;
+		width: 70%;
+	}
 }
 
 @media (max-width: 490px) {
