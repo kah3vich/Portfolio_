@@ -51,4 +51,30 @@ export const info = [
 		art: '/togo_.png',
 		star: 0,
 	},
+	{
+		id: 5,
+		title: 'PIT-STOP',
+		year: '2021',
+		website: 'https://kah3vich.github.io/Pit-Stop/public/index.html',
+		platform: 'Windows/macOS/Linux/iOS/Android',
+		stack: 'JS, GSAP, Jquery',
+		photo: '/pitstop.png',
+		description:
+			'A project for a chain of auto repair shops that works on machine tools. This project used a lot of animation and implementation of a custom constructor to select the color of the car and disks for it, on the page - the designer.',
+		art: '/pitstop_.png',
+		star: 1,
+	},
+	{
+		id: 6,
+		title: 'Track Love',
+		year: '2022',
+		website: 'https://kah3vich.github.io/Tracklove/dist/index.html',
+		platform: 'Windows/macOS/Linux/iOS/Android',
+		stack: 'JS, Jquery',
+		photo: '/tracklove.png',
+		description:
+			'A project for a service that, through python bots, tracks the latest messages in a person`s social networks through api and provides analytics on a page from a person`s social network, social networks: vkontakte, tinder and ints.',
+		art: '/tracklove_.png',
+		star: 0,
+	},
 ]
