@@ -57,7 +57,7 @@ const Home = () => {
 						<ul className='home__bio-l'>
 							<li className='home__bio-i'>
 								<span>2002</span>
-								<p>Born in Russia, Moscow.</p>
+								<p>Born in Russia, NN.</p>
 							</li>
 							<li className='home__bio-i'>
 								<span>2019</span>
