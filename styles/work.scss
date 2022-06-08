@@ -60,6 +60,7 @@
 		align-items: center;
 		justify-content: flex-start;
 		margin: 0 0 15px 0;
+		width: 100%;
 		&:last-child {
 			margin: 0 0 0 0;
 		}
@@ -81,6 +82,8 @@
 			font-size: 18px;
 			font-weight: 500;
 			margin: 0 0 0 10px;
+			word-wrap: break-word;
+			width: 70%;
 		}
 		& p {
 			color: var(--colors);
@@ -88,6 +91,8 @@
 			font-size: 18px;
 			font-weight: 500;
 			margin: 0 0 0 10px;
+			word-wrap: break-word;
+			width: 70%;
 		}
 	}
 	&__photo {
