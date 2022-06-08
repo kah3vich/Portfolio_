@@ -1,9 +1,12 @@
 import { FC } from 'react'
 import Navbar from './Navbar'
+import Animation from './Animation'
 
 const Header: FC = () => (
 	<header>
-		<Navbar />
+		<Animation>
+			<Navbar />
+		</Animation>
 	</header>
 )
 
