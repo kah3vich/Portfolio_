@@ -1,9 +1,5 @@
 import Head from 'next/head'
-
-interface HeadProps {
-	title: string
-	children?: React.ReactNode
-}
+import { HeadProps } from '../type'
 
 const Heads = ({ title }: HeadProps) => {
 	return (
@@ -28,7 +24,7 @@ const Heads = ({ title }: HeadProps) => {
 				property='og:image'
 				content='https://portfolio-kahevich.vercel.app/card.jpg'
 			/>
-			<title>{title === null ? '' : title} | Kah3vich</title>
+			<title>{title === null ? null : title} | Kah3vich</title>
 			<link
 				rel='stylesheet'
 				href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'

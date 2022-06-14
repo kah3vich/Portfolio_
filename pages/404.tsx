@@ -1,7 +1,8 @@
 import Layout from '../components/layout/Layout'
 import Animation from '../components/Animation'
+import { FC } from 'react'
 
-const Error = () => {
+const Error: FC = () => {
 	return (
 		<Layout title='Error 404'>
 			<div className='containers'>

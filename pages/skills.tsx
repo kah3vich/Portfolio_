@@ -1,5 +1,5 @@
 import Layout from '../components/layout/Layout'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Animation from '../components/Animation'
 import {
 	DiBootstrap,
@@ -24,9 +24,10 @@ import {
 	DiVisualstudio,
 } from 'react-icons/di'
 import Link from 'next/link'
+import { skillsList } from '../type'
 
-const Skills = () => {
-	const stack = [
+const Skills: FC = () => {
+	const stack: skillsList[] = [
 		{ id: 1, name: 'HTML', progress: '95' },
 		{ id: 2, name: 'CSS', progress: '95' },
 		{ id: 2, name: 'JS', progress: '80' },
@@ -35,7 +36,7 @@ const Skills = () => {
 		{ id: 5, name: 'C++', progress: '45' },
 	]
 
-	const [bar, setBar] = useState(false)
+	const [bar, setBar] = useState<boolean>(false)
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -53,7 +54,7 @@ const Skills = () => {
 					<Animation delay={0.4}>
 						<Animation>
 							<ul className='skills__l'>
-								{stack.map(({ id, name, progress }: any) => (
+								{stack.map(({ id, name, progress }: skillsList) => (
 									<li key={id} className='skills__progress-bar'>
 										<div>
 											<div className='skills__progress'>{`${progress}%`}</div>

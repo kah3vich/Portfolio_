@@ -1,11 +1,7 @@
 import Heads from '../Heads'
+import { layoutProps } from '../../type'
 
-interface Props {
-	children: any
-	title: string
-}
-
-const Layout = ({ children, title }: Props) => {
+const Layout = ({ children, title }: layoutProps) => {
 	return (
 		<div>
 			<Heads title={title} />

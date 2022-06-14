@@ -1,4 +1,3 @@
-// Base
 import React, { useEffect, useRef, useState } from 'react'
 
 // Three JS - 3D Animation

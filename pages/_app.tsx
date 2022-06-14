@@ -42,7 +42,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => (
 					<Component {...pageProps} />
 				</motion.div>
 			</AnimatePresence>
-
 			<Footer />
 		</main>
 	</Main>

@@ -3,8 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FiChevronRight } from 'react-icons/fi'
 import Animation from '../../components/Animation'
+import { workObj } from '../../type'
 
-export const getServerSideProps = async (context: { params: { id: any } }) => {
+export const getServerSideProps = async (context: {
+	params: { id: number }
+}) => {
 	const { id } = context.params
 	const response = await fetch(`${process.env.API_HOST}/info/${id}`, {
 		method: 'GET',
@@ -27,10 +30,8 @@ export const getServerSideProps = async (context: { params: { id: any } }) => {
 	}
 }
 
-const Work = ({ work }: any) => {
-	if (!work) {
-		return null
-	}
+const Work = ({ work }: workObj) => {
+	if (!work) return null
 
 	return (
 		<Layout title='Work'>
@@ -51,7 +52,7 @@ const Work = ({ work }: any) => {
 					<Animation classN='work__i' delay={0.6}>
 						<div className='work__items'>
 							<span>WEBSITE</span>
-							<Link href={work.website}>
+							<Link href={`${work.website}`}>
 								<a target='_blanc'>{work.website}</a>
 							</Link>
 						</div>

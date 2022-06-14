@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { animationProps } from '../type'
 
-const Animation = ({ children, delay = 0.3, classN = '' }: any) => {
+const Animation = ({ children, delay = 0.3, classN = '' }: animationProps) => {
 	return (
 		<motion.div
 			initial={{ y: 10, opacity: 0 }}

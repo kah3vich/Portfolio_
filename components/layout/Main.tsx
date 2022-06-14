@@ -1,20 +1,7 @@
-import Head from 'next/head'
-import React from 'react'
+import { mainProps } from '../../type'
 
-interface MainProps {
-	children: React.ReactNode
-}
-
-const Main = ({ children }: MainProps) => {
-	return (
-		<>
-			<Head>
-				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<title></title>
-			</Head>
-			<>{children}</>
-		</>
-	)
+const Main = ({ children }: mainProps) => {
+	return <main>{children}</main>
 }
 
 export default Main

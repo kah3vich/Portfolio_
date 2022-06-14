@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { IoLogoGithub } from 'react-icons/io5'
 import Theme from './Theme'
+import { navbarNavigation } from '../type'
 
-const navigation = [
+const navigation: navbarNavigation[] = [
 	{ id: 1, title: 'Works', path: '/works' },
 	{ id: 2, title: 'Skills', path: '/skills' },
 ]
@@ -21,7 +21,7 @@ const Navbar: FC = () => {
 				</a>
 			</Link>
 			<div className='navbar__b'>
-				{navigation.map(({ id, title, path }) => (
+				{navigation.map(({ id, title, path }: navbarNavigation) => (
 					<Link key={id} href={path}>
 						<a
 							className={`navbar__link ${

@@ -5,8 +5,9 @@ import { IoLogoGithub } from 'react-icons/io5'
 import { AiOutlineCodepen } from 'react-icons/ai'
 import { FaTelegramPlane } from 'react-icons/fa'
 import Animation from '../components/Animation'
+import { FC } from 'react'
 
-const Home = () => {
+const Home: FC = () => {
 	return (
 		<Layout title='Home'>
 			<div className='containers'>

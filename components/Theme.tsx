@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { BsSun, BsMoonStars } from 'react-icons/bs'
 import { useTheme } from './hooks/useTheme'
 
-const Theme = () => {
+const Theme: FC = () => {
 	const { theme, setTheme } = useTheme()
 
 	const handleLightTheme = () => {
@@ -13,7 +13,7 @@ const Theme = () => {
 		setTheme('dark')
 	}
 
-	const [hasMounted, setHasMounted] = useState(false)
+	const [hasMounted, setHasMounted] = useState<boolean>(false)
 
 	useEffect(() => {
 		setHasMounted(true)
