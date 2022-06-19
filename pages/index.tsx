@@ -20,14 +20,16 @@ const Home: FC = () => {
 							<h2>Kahevich</h2>
 							<p>Digital Master (Developer / Tester)</p>
 						</div>
-						<div className='home__photo'>
+						<Link href='https://upload.wikimedia.org/wikipedia/commons/0/0c/I_am_always_near.png'>
+							<a className='home__photo'>
 							<Image
 								alt='Picture of the author'
 								width={250}
 								height={250}
 								src='/author.jpg'
 							/>
-						</div>
+							</a>
+						</Link>
 					</Animation>
 					<Animation classN='home__work' delay={0.5}>
 						<div className='home__work-t'>Work</div>
