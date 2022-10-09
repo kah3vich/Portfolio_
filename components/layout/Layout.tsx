@@ -1,5 +1,5 @@
-import Heads from '../Heads'
-import { layoutProps } from '../../type'
+import { layoutProps } from '../../type';
+import Heads from '../Heads';
 
 const Layout = ({ children, title }: layoutProps) => {
 	return (
@@ -7,7 +7,7 @@ const Layout = ({ children, title }: layoutProps) => {
 			<Heads title={title} />
 			{children}
 		</div>
-	)
-}
+	);
+};
 
-export default Layout
+export default Layout;

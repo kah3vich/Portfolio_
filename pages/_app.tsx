@@ -1,12 +1,12 @@
-import { AppProps } from 'next/app'
-import Fonts from '../components/Fonts'
-import '../styles/globals.scss'
-import Main from '../components/layout/Main'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
-import SceneTJ from '../components/SceneTJ'
-import { AnimatePresence, motion } from 'framer-motion'
-import NextNProgress from 'nextjs-progressbar'
+import { AnimatePresence, motion } from 'framer-motion';
+import { AppProps } from 'next/app';
+import NextNProgress from 'nextjs-progressbar';
+import Fonts from '../components/Fonts';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Main from '../components/layout/Main';
+import SceneTJ from '../components/SceneTJ';
+import '../styles/globals.scss';
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => (
 	<Main>
@@ -45,6 +45,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => (
 			<Footer />
 		</main>
 	</Main>
-)
+);
 
-export default MyApp
+export default MyApp;

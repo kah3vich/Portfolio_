@@ -1,20 +1,39 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/SceneTJ.js", "pages/api/info/index.js", "pages/api/info/[id].js", "pages/api/data/info.js", "components/hooks/useTheme.js", "components/Animation.tsx"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"components/SceneTJ.js",
+		"pages/api/info/index.js",
+		"pages/api/info/[id].js",
+		"pages/api/data/info.js",
+		"components/hooks/useTheme.js",
+		"components/Animation.tsx"
+	],
+	"exclude": ["node_modules"],
+	"baseUrl": ".",
+	"paths": {
+		"@/components/*": ["components/*"],
+		"@/__mocks__/*": ["__mocks__/*"],
+		"@/pages/*": ["pages/*"],
+		"@/shaders/*": ["shaders/*"],
+		"@/style/*": ["style/*"],
+		"@/type": ["type/index.ts"]
+	}
 }

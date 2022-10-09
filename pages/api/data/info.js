@@ -77,4 +77,4 @@ export const info = [
 		art: '/tracklove_.png',
 		star: 0,
 	},
-]
+];

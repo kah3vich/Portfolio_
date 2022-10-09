@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import Animation from './Animation'
+import { FC } from 'react';
+import Animation from './Animation';
 
 const Footer: FC = () => (
 	<footer>
@@ -7,6 +7,6 @@ const Footer: FC = () => (
 			<h3>© 2022 KAH3VICH. All Rights Reserved.</h3>
 		</Animation>
 	</footer>
-)
+);
 
-export default Footer
+export default Footer;

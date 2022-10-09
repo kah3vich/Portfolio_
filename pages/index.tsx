@@ -1,11 +1,11 @@
-import Layout from '../components/layout/Layout'
-import Image from 'next/image'
-import Link from 'next/link'
-import { IoLogoGithub } from 'react-icons/io5'
-import { AiOutlineCodepen } from 'react-icons/ai'
-import { FaTelegramPlane } from 'react-icons/fa'
-import Animation from '../components/Animation'
-import { FC } from 'react'
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
+import { AiOutlineCodepen } from 'react-icons/ai';
+import { FaTelegramPlane } from 'react-icons/fa';
+import { IoLogoGithub } from 'react-icons/io5';
+import Animation from '../components/Animation';
+import Layout from '../components/layout/Layout';
 
 const Home: FC = () => {
 	return (
@@ -21,24 +21,18 @@ const Home: FC = () => {
 							<p>Digital Master (Developer / Tester)</p>
 						</div>
 						<Link href='https://upload.wikimedia.org/wikipedia/commons/0/0c/I_am_always_near.png'>
-							<a className='home__photo'>
-							<Image
-								alt='Picture of the author'
-								width={250}
-								height={250}
-								src='/author.jpg'
-							/>
+							<a className='home__photo' target='_blank'>
+								<Image alt='Picture of the author' width={250} height={250} src='/author.jpg' />
 							</a>
 						</Link>
 					</Animation>
 					<Animation classN='home__work' delay={0.5}>
 						<div className='home__work-t'>Work</div>
 						<div className='home__work-d'>
-							A self-taught full stack web developer. My passion for software
-							lies with dreaming up ideas and making them come true with elegant
-							interfaces. I take great care in the experience, architecture, and
-							code quality. I learned a lot from the open-source community and i
-							love how collaboration and knowledge sharing happened through
+							A self-taught full stack web developer. My passion for software lies with dreaming up
+							ideas and making them come true with elegant interfaces. I take great care in the
+							experience, architecture, and code quality. I learned a lot from the open-source
+							community and i love how collaboration and knowledge sharing happened through
 							open-source.
 						</div>
 						<Link href='/works'>
@@ -46,10 +40,7 @@ const Home: FC = () => {
 								<p>My portfolio</p>
 								<span>
 									<svg viewBox='0 0 24 24' focusable='false' aria-hidden='true'>
-										<path
-											fill='black'
-											d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'
-										></path>
+										<path fill='black' d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'></path>
 									</svg>
 								</span>
 							</a>
@@ -109,10 +100,7 @@ const Home: FC = () => {
 								<p>My skills</p>
 								<span>
 									<svg viewBox='0 0 24 24' focusable='false' aria-hidden='true'>
-										<path
-											fill='black'
-											d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'
-										></path>
+										<path fill='black' d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'></path>
 									</svg>
 								</span>
 							</a>
@@ -121,7 +109,7 @@ const Home: FC = () => {
 				</div>
 			</div>
 		</Layout>
-	)
-}
+	);
+};
 
-export default Home
+export default Home;

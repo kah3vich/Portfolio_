@@ -1,12 +1,11 @@
-import Layout from '../components/layout/Layout'
-import { FC, useEffect, useState } from 'react'
-import Animation from '../components/Animation'
+import Link from 'next/link';
+import { FC, useEffect, useState } from 'react';
 import {
 	DiBootstrap,
 	DiCodepen,
 	DiCoffeescript,
-	DiGithubBadge,
 	DiCss3,
+	DiGithubBadge,
 	DiGulp,
 	DiHtml5,
 	DiJavascript1,
@@ -14,35 +13,28 @@ import {
 	DiLaravel,
 	DiLess,
 	DiLinux,
-	DiReact,
-	DiNpm,
 	DiNodejsSmall,
-	DiPython,
-	DiSass,
+	DiNpm,
 	DiPhp,
-	DiWordpress,
+	DiPython,
+	DiReact,
+	DiSass,
 	DiVisualstudio,
-} from 'react-icons/di'
-import Link from 'next/link'
-import { skillsList } from '../type'
+	DiWordpress,
+} from 'react-icons/di';
+import Animation from '../components/Animation';
+import Layout from '../components/layout/Layout';
+import type { ISkillsList } from '../type';
+import { stack } from '../__mocks__/skills';
 
 const Skills: FC = () => {
-	const stack: skillsList[] = [
-		{ id: 1, name: 'HTML', progress: '95' },
-		{ id: 2, name: 'CSS', progress: '95' },
-		{ id: 2, name: 'JS', progress: '80' },
-		{ id: 3, name: 'Python', progress: '70' },
-		{ id: 4, name: 'PHP', progress: '50' },
-		{ id: 5, name: 'C++', progress: '45' },
-	]
-
-	const [bar, setBar] = useState<boolean>(false)
+	const [bar, setBar] = useState<boolean>(false);
 
 	useEffect(() => {
 		setTimeout(() => {
-			setBar(true)
-		}, 1100)
-	}, [])
+			setBar(true);
+		}, 1100);
+	}, []);
 
 	return (
 		<Layout title='Skills'>
@@ -54,7 +46,7 @@ const Skills: FC = () => {
 					<Animation delay={0.4}>
 						<Animation>
 							<ul className='skills__l'>
-								{stack.map(({ id, name, progress }: skillsList) => (
+								{stack.map(({ id, name, progress }: ISkillsList) => (
 									<li key={id} className='skills__progress-bar'>
 										<div>
 											<div className='skills__progress'>{`${progress}%`}</div>
@@ -72,9 +64,7 @@ const Skills: FC = () => {
 						</Animation>
 					</Animation>
 					<Animation delay={0.5}>
-						<h2 className='skills__t'>
-							Languages | Frameworks | Tools | Abilities
-						</h2>
+						<h2 className='skills__t'>Languages | Frameworks | Tools | Abilities</h2>
 					</Animation>
 					<Animation>
 						<ul className='skills__list'>
@@ -164,10 +154,7 @@ const Skills: FC = () => {
 								<p>All skills</p>
 								<span>
 									<svg viewBox='0 0 24 24' focusable='false' aria-hidden='true'>
-										<path
-											fill='black'
-											d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'
-										></path>
+										<path fill='black' d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'></path>
 									</svg>
 								</span>
 							</a>
@@ -176,7 +163,7 @@ const Skills: FC = () => {
 				</div>
 			</div>
 		</Layout>
-	)
-}
+	);
+};
 
-export default Skills
+export default Skills;

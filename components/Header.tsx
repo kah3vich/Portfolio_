@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import Navbar from './Navbar'
-import Animation from './Animation'
+import { FC } from 'react';
+import Animation from './Animation';
+import Navbar from './Navbar';
 
 const Header: FC = () => (
 	<header>
@@ -8,6 +8,6 @@ const Header: FC = () => (
 			<Navbar />
 		</Animation>
 	</header>
-)
+);
 
-export default Header
+export default Header;

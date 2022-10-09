@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { animationProps } from '../type'
+import { motion } from 'framer-motion';
+import { animationProps } from '../type';
 
 const Animation = ({ children, delay = 0.3, classN = '' }: animationProps) => {
 	return (
@@ -16,7 +16,7 @@ const Animation = ({ children, delay = 0.3, classN = '' }: animationProps) => {
 		>
 			{children}
 		</motion.div>
-	)
-}
+	);
+};
 
-export default Animation
+export default Animation;
