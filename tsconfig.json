@@ -34,6 +34,7 @@
 		"@/pages/*": ["pages/*"],
 		"@/shaders/*": ["shaders/*"],
 		"@/style/*": ["style/*"],
-		"@/type": ["type/index.ts"]
+		"@/types": ["types/index.ts"],
+		"@/constant": ["constant/index.ts"]
 	}
 }

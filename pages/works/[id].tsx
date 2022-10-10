@@ -3,11 +3,13 @@ import Link from 'next/link';
 import { FiChevronRight } from 'react-icons/fi';
 import Animation from '../../components/Animation';
 import Layout from '../../components/layout/Layout';
-import { workObj } from '../../type';
+import { API_HOST } from '../../constant';
+import type { workObj } from '../../types';
 
 export const getServerSideProps = async (context: { params: { id: number } }) => {
 	const { id } = context.params;
-	const response = await fetch(`${process.env.API_HOST}/info/${id}`, {
+
+	const response = await fetch(`${API_HOST}/info/${id}`, {
 		method: 'GET',
 		headers: {
 			'User-Agent':
@@ -32,7 +34,7 @@ const Work = ({ work }: workObj) => {
 	if (!work) return null;
 
 	return (
-		<Layout title='Work'>
+		<Layout title={work.title}>
 			<div className='containers'>
 				<div className='work'>
 					<Animation classN='work__h'>
@@ -51,7 +53,7 @@ const Work = ({ work }: workObj) => {
 						<div className='work__items'>
 							<span>WEBSITE</span>
 							<Link href={`${work.website}`}>
-								<a target='_blanc'>{work.website}</a>
+								<a target='_blank'>{work.website}</a>
 							</Link>
 						</div>
 						<div className='work__items'>

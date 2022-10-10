@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai';
 import Animation from '../../components/Animation';
 import Layout from '../../components/layout/Layout';
-import { worksList, worksObj } from '../../type';
+import { API_HOST } from '../../constant';
+import type { worksList, worksObj } from '../../types';
 
 export const getStaticProps = async () => {
 	try {
-		const response = await fetch(`${process.env.API_HOST}/info`);
+		const response = await fetch(`${API_HOST}/info`);
 		const data = await response.json();
 
 		if (!data) {

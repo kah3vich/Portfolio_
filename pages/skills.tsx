@@ -24,7 +24,7 @@ import {
 } from 'react-icons/di';
 import Animation from '../components/Animation';
 import Layout from '../components/layout/Layout';
-import type { ISkillsList } from '../type';
+import type { ISkillsList } from '../types';
 import { stack } from '../__mocks__/skills';
 
 const Skills: FC = () => {
@@ -150,7 +150,7 @@ const Skills: FC = () => {
 							</li>
 						</ul>
 						<Link href='https://github.com/kah3vich/kah3vich#-languages--frameworks--tools--abilities-'>
-							<a className='skills__b' target='_blanc'>
+							<a className='skills__b' target='_blank'>
 								<p>All skills</p>
 								<span>
 									<svg viewBox='0 0 24 24' focusable='false' aria-hidden='true'>

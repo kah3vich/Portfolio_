@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { HeadProps } from '../type';
+import { HeadProps } from '../types';
 
 const Heads = ({ title }: HeadProps) => {
 	return (
@@ -18,7 +18,7 @@ const Heads = ({ title }: HeadProps) => {
 			<meta name='og:title' content='Kahevich Portfolio' />
 			<meta property='og:type' content='website' />
 			<meta property='og:image' content='https://portfolio-kahevich.vercel.app/card.jpg' />
-			<title>{title === null ? null : title} | Kah3vich</title>
+			<title>{title}</title>
 			<link
 				rel='stylesheet'
 				href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
