@@ -1,4 +1,4 @@
-import type { ISkillsList } from '../type';
+import type { ISkillsList } from '../types';
 
 export const stack: ISkillsList[] = [
 	{ id: 1, name: 'HTML', progress: '95' },

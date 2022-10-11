@@ -206,6 +206,14 @@
 			margin: 10px 0 25px 0;
 			color: var(--colors);
 		}
+		&-l {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			gap: 8px 0;
+		}
 		&-d {
 			text-align: justify;
 			text-indent: 1em;
