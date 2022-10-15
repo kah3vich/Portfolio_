@@ -23,7 +23,7 @@ import {
 	DiWordpress,
 } from 'react-icons/di';
 import Animation from '../components/Animation';
-import Layout from '../components/layout/Layout';
+import Layout from '../layout/Layout';
 import type { ISkillsList } from '../types';
 import { stack } from '../__mocks__/skills';
 

@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 // Three JS - 3D Animation
 import { gsap } from 'gsap/dist/gsap';
-import $ from 'jquery';
 import * as THREE from 'three';
 
 // Shaders
@@ -22,7 +21,6 @@ const SceneTJ = () => {
 
 	// link canvas 3D animation
 	const __three = useRef(null);
-	const titles = useRef(null);
 
 	// 3D animation - threejs
 	useEffect(() => {
@@ -93,30 +91,31 @@ const SceneTJ = () => {
 
 		// Animation
 
-		$('.scenetj').hover(
-			() => {
-				gsap.to(material.uniforms.u_factor, {
-					value: 1.0,
-				});
-				gsap.to(camera.position, {
-					duration: 0.3,
-					ease: 'Expo.ease',
-					z: 10,
-				});
-			},
-			() => {
-				gsap.to(material.uniforms.u_factor, {
-					value: 0.5,
-				});
-				gsap.to(camera.position, {
-					duration: 0.3,
-					ease: 'Expo.ease',
-					z: 6,
-				});
-			},
-		);
+		sceneContainers.current.addEventListener('mousemove', () => {
+			gsap.to(material.uniforms.u_factor, {
+				value: 1.0,
+			});
+			gsap.to(camera.position, {
+				duration: 0.3,
+				ease: 'Expo.ease',
+				z: 10,
+			});
+		});
+
+		sceneContainers.current.addEventListener('mouseout', () => {
+			gsap.to(material.uniforms.u_factor, {
+				value: 0.5,
+			});
+			gsap.to(camera.position, {
+				duration: 0.3,
+				ease: 'Expo.ease',
+				z: 6,
+			});
+		});
 
 		const clock = new THREE.Clock();
+
+		// Render
 
 		const render_ = () => {
 			camera.lookAt(scene.position);
@@ -128,7 +127,7 @@ const SceneTJ = () => {
 			sphere.rotation.y += 0.005;
 			sphere.rotation.x += 0.003;
 
-			// Render
+			// reRender
 			requestAnimationFrame(() => {
 				render_();
 			});
@@ -140,16 +139,12 @@ const SceneTJ = () => {
 	return (
 		<div className='containers'>
 			<div className='scenetj' ref={sceneContainers}>
-				<div className='loader' style={{ opacity: loadings_ === false ? '1' : '0' }}>
+				<div className='loader' style={{ opacity: loadings_ ? '0' : '1' }}>
 					<div className='ball'></div>
 					<div className='ball'></div>
 					<div className='ball'></div>
 				</div>
-				<canvas
-					id='__three'
-					ref={__three}
-					style={{ opacity: loadings_ === false ? '0' : '1' }}
-				></canvas>
+				<canvas id='__three' ref={__three} style={{ opacity: loadings_ ? '1' : '0' }}></canvas>
 			</div>
 		</div>
 	);

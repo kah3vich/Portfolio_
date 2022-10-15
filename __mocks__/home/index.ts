@@ -1,7 +1,7 @@
+import { IHomePageMocks } from '@/types';
 import { AiOutlineCodepen } from 'react-icons/ai';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { IoLogoGithub } from 'react-icons/io5';
-import type { IHomePageMocks } from '../../types';
 
 export const homePageMocks: IHomePageMocks = {
 	bannerText: 'Hello, I`m an app developer based in Russia!',

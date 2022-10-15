@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FiChevronRight } from 'react-icons/fi';
 import Animation from '../../components/Animation';
-import Layout from '../../components/layout/Layout';
 import { API_HOST } from '../../constant';
+import Layout from '../../layout/Layout';
 import type { workObj } from '../../types';
 
 export const getServerSideProps = async (context: { params: { id: number } }) => {

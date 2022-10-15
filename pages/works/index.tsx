@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai';
 import Animation from '../../components/Animation';
-import Layout from '../../components/layout/Layout';
 import { API_HOST } from '../../constant';
+import Layout from '../../layout/Layout';
 import type { worksList, worksObj } from '../../types';
 
 export const getStaticProps = async () => {

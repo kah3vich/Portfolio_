@@ -4,8 +4,8 @@ import NextNProgress from 'nextjs-progressbar';
 import Fonts from '../components/Fonts';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Main from '../components/layout/Main';
 import SceneTJ from '../components/SceneTJ';
+import Main from '../layout/Main';
 import '../styles/globals.scss';
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => (

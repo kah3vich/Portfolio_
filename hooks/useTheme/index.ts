@@ -1,3 +1,4 @@
+import type { ISetThemes, TTheme } from '@/types';
 import { useEffect, useState } from 'react';
 
 const defaultThemes = () => {
@@ -13,18 +14,20 @@ const getThemes = () => {
 	}
 };
 
-const setThemes = value => {
+const setThemes = (props: ISetThemes) => {
+	const { value } = props;
+
 	if (typeof window !== 'undefined') {
 		localStorage.setItem('app-theme', value);
 	}
 };
 
 export const useTheme = () => {
-	const [theme, setTheme] = useState(getThemes() || defaultThemes());
+	const [theme, setTheme] = useState(`${getThemes() || defaultThemes()}`);
 
 	useEffect(() => {
-		document.documentElement.setAttribute('data-theme', theme);
-		setThemes(theme);
+		document.documentElement.setAttribute('data-theme', theme as TTheme);
+		setThemes(theme as unknown as ISetThemes);
 	}, [theme]);
 
 	return { theme, setTheme };

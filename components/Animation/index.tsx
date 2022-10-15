@@ -1,7 +1,10 @@
+import type { IAnimationProps } from '@/types';
 import { motion } from 'framer-motion';
-import { animationProps } from '../type';
+import React, { FC } from 'react';
 
-const Animation = ({ children, delay = 0.3, classN = '' }: animationProps) => {
+const _Animation: FC<IAnimationProps> = props => {
+	const { children, delay = 0.3, classN = '' } = props;
+
 	return (
 		<motion.div
 			initial={{ y: 10, opacity: 0 }}
@@ -19,4 +22,4 @@ const Animation = ({ children, delay = 0.3, classN = '' }: animationProps) => {
 	);
 };
 
-export default Animation;
+export const Animation = React.memo(_Animation);

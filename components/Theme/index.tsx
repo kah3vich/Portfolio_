@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
-import { useTheme } from './hooks/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 
 const Theme: FC = () => {
 	const { theme, setTheme } = useTheme();

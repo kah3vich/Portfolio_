@@ -13,28 +13,30 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-		"incremental": true
+		"incremental": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/components": ["components/index.ts"],
+			"@/__mocks__": ["__mocks__/index.ts"],
+			"@/pages/*": ["pages/*"],
+			"@/shaders/*": ["shaders/*"],
+			"@/style/*": ["style/*"],
+			"@/types": ["types/index.ts"],
+			"@/constant": ["constant/index.ts"],
+			"@/hooks": ["hooks/index.ts"],
+			"@/layout": ["layout/index.ts"]
+		}
 	},
 	"include": [
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"components/SceneTJ.js",
+		"components/SceneTJ/index.js",
 		"pages/api/info/index.js",
 		"pages/api/info/[id].js",
 		"pages/api/data/info.js",
-		"components/hooks/useTheme.js",
-		"components/Animation.tsx"
+		"hooks/useTheme/index.ts",
+		"components/Animation/index.tsx"
 	],
-	"exclude": ["node_modules"],
-	"baseUrl": ".",
-	"paths": {
-		"@/components/*": ["components/*"],
-		"@/__mocks__/*": ["__mocks__/*"],
-		"@/pages/*": ["pages/*"],
-		"@/shaders/*": ["shaders/*"],
-		"@/style/*": ["style/*"],
-		"@/types": ["types/index.ts"],
-		"@/constant": ["constant/index.ts"]
-	}
+	"exclude": ["node_modules"]
 }

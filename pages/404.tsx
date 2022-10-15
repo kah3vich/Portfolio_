@@ -1,17 +1,15 @@
+import Animation from '@/components/Animation';
+import Layout from '@/components/layout/Layout';
+import { errorPageMocks } from '@/__mocks__';
 import { FC } from 'react';
-import Animation from '../components/Animation';
-import Layout from '../components/layout/Layout';
 
 const Error: FC = () => {
 	return (
-		<Layout title='Error 404'>
+		<Layout title={errorPageMocks.title}>
 			<div className='containers'>
 				<Animation classN='error' delay={0.5}>
-					<h3>Error 404</h3>
-					<p>
-						You have landed on a non-existent page, in order to go to real pages, use the menu
-						above.
-					</p>
+					<h3>{errorPageMocks.title}</h3>
+					<p>{errorPageMocks.description}</p>
 				</Animation>
 			</div>
 		</Layout>
