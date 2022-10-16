@@ -1,8 +1,8 @@
-import { FC, useEffect, useState } from 'react';
+import { useTheme } from '@/hooks';
+import React, { FC, useEffect, useState } from 'react';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
-import { useTheme } from '../../hooks/useTheme';
 
-const Theme: FC = () => {
+const _Theme: FC = () => {
 	const { theme, setTheme } = useTheme();
 
 	const handleLightTheme = () => {
@@ -39,4 +39,4 @@ const Theme: FC = () => {
 	);
 };
 
-export default Theme;
+export const Theme = React.memo(_Theme);

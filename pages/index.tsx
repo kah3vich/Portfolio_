@@ -1,7 +1,6 @@
-import Animation from '@/components/Animation';
-import Layout from '@/components/layout/Layout';
-import { ArrowRight } from '@/components/svg/ArrowRight';
-import { homePageMocks } from '@/__mocks__/home';
+import { Animation, ArrowRight } from '@/components';
+import { Layout } from '@/layout';
+import { homePageMocks } from '@/__mocks__';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC } from 'react';

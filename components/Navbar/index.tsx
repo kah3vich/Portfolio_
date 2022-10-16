@@ -1,16 +1,16 @@
+import { Theme } from '@/components';
+import { INavbarNavigation } from '@/types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { IoLogoGithub } from 'react-icons/io5';
-import { navbarNavigation } from '../../types';
-import Theme from '../Theme';
 
-const navigation: navbarNavigation[] = [
+const navigation: INavbarNavigation[] = [
 	{ id: 1, title: 'Works', path: '/works' },
 	{ id: 2, title: 'Skills', path: '/skills' },
 ];
 
-const Navbar: FC = () => {
+const _Navbar: FC = () => {
 	const { pathname } = useRouter();
 
 	return (
@@ -21,7 +21,7 @@ const Navbar: FC = () => {
 				</a>
 			</Link>
 			<div className='navbar__b'>
-				{navigation.map(({ id, title, path }: navbarNavigation) => (
+				{navigation.map(({ id, title, path }: INavbarNavigation) => (
 					<Link key={id} href={path}>
 						<a className={`navbar__link ${pathname === path ? 'navbar__a' : ''}`}>{title}</a>
 					</Link>
@@ -38,4 +38,4 @@ const Navbar: FC = () => {
 	);
 };
 
-export default Navbar;
+export const Navbar = React.memo(_Navbar);

@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 
 // Three JS - 3D Animation
-import { gsap } from 'gsap/dist/gsap';
+import { gsap } from 'gsap';
 import * as THREE from 'three';
 
 // Shaders
-import fragment from '../shaders/fragment.glsl';
-import vertex from '../shaders/vertex.glsl';
+import React from 'react';
+import fragment from '../../shaders/fragment.glsl';
+import vertex from '../../shaders/vertex.glsl';
 
-const SceneTJ = () => {
-	const [loadings_, setLoadings_] = useState(false);
+const _SceneTJ = () => {
+	const [loadings_, setLoadings_] = useState<boolean>(false);
 
-	const sceneContainers = useRef(null);
+	const sceneContainers = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -20,7 +21,7 @@ const SceneTJ = () => {
 	}, []);
 
 	// link canvas 3D animation
-	const __three = useRef(null);
+	const __three = useRef<HTMLCanvasElement>(null);
 
 	// 3D animation - threejs
 	useEffect(() => {
@@ -59,8 +60,10 @@ const SceneTJ = () => {
 
 		window.addEventListener('resize', () => {
 			// Update sizes
-			sizes.width = sceneContainers.innerWidth;
-			sizes.height = sceneContainers.innerHeight;
+			if (sceneContainers.current) {
+				sizes.width = sceneContainers.current.clientWidth;
+				sizes.height = sceneContainers.current.clientHeight;
+			}
 
 			// Update camera
 			camera.aspect = 1.5;
@@ -84,34 +87,36 @@ const SceneTJ = () => {
 		const renderer = new THREE.WebGLRenderer({
 			antialias: true,
 			alpha: true,
-			canvas: canvas,
+			canvas: canvas as THREE.OffscreenCanvas,
 		});
 		renderer.setSize(1440, 630);
 		renderer.setClearColor(0x000000, 0);
 
 		// Animation
 
-		sceneContainers.current.addEventListener('mousemove', () => {
-			gsap.to(material.uniforms.u_factor, {
-				value: 1.0,
+		if (sceneContainers.current) {
+			sceneContainers.current.addEventListener('mousemove', () => {
+				gsap.to(material.uniforms.u_factor, {
+					value: 1.0,
+				});
+				gsap.to(camera.position, {
+					duration: 0.3,
+					ease: 'Expo.ease',
+					z: 10,
+				});
 			});
-			gsap.to(camera.position, {
-				duration: 0.3,
-				ease: 'Expo.ease',
-				z: 10,
-			});
-		});
 
-		sceneContainers.current.addEventListener('mouseout', () => {
-			gsap.to(material.uniforms.u_factor, {
-				value: 0.5,
+			sceneContainers.current.addEventListener('mouseout', () => {
+				gsap.to(material.uniforms.u_factor, {
+					value: 0.5,
+				});
+				gsap.to(camera.position, {
+					duration: 0.3,
+					ease: 'Expo.ease',
+					z: 6,
+				});
 			});
-			gsap.to(camera.position, {
-				duration: 0.3,
-				ease: 'Expo.ease',
-				z: 6,
-			});
-		});
+		}
 
 		const clock = new THREE.Clock();
 
@@ -150,4 +155,4 @@ const SceneTJ = () => {
 	);
 };
 
-export default SceneTJ;
+export const SceneTJ = React.memo(_SceneTJ);

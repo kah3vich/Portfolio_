@@ -1,3 +1,7 @@
+import { Animation } from '@/components';
+import { Layout } from '@/layout';
+import type { ISkillsList } from '@/types';
+import { stack } from '@/__mocks__';
 import Link from 'next/link';
 import { FC, useEffect, useState } from 'react';
 import {
@@ -22,10 +26,6 @@ import {
 	DiVisualstudio,
 	DiWordpress,
 } from 'react-icons/di';
-import Animation from '../components/Animation';
-import Layout from '../layout/Layout';
-import type { ISkillsList } from '../types';
-import { stack } from '../__mocks__/skills';
 
 const Skills: FC = () => {
 	const [bar, setBar] = useState<boolean>(false);

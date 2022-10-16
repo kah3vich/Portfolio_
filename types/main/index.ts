@@ -1,3 +1,3 @@
-export interface mainProps {
+export interface IMainProps {
 	children?: React.ReactNode;
 }

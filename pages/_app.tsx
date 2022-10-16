@@ -1,12 +1,9 @@
+import { Fonts, Footer, Header, SceneTJ } from '@/components';
+import { Main } from '@/layout';
+import '@/styles';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
-import Fonts from '../components/Fonts';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import SceneTJ from '../components/SceneTJ';
-import Main from '../layout/Main';
-import '../styles/globals.scss';
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => (
 	<Main>

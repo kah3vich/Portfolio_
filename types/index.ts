@@ -8,4 +8,5 @@ export * from './layout';
 export * from './main';
 export * from './navbar';
 export * from './skills';
+export * from './svg';
 export * from './work';

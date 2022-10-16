@@ -1,5 +1,5 @@
-import Animation from '@/components/Animation';
-import Layout from '@/components/layout/Layout';
+import { Animation } from '@/components';
+import { Layout } from '@/layout';
 import { errorPageMocks } from '@/__mocks__';
 import { FC } from 'react';
 

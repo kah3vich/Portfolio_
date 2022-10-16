@@ -37,7 +37,6 @@
 		"framer-motion": "^6.3.3",
 		"glslify-loader": "^2.0.0",
 		"gsap": "^3.10.4",
-		"jquery": "^3.6.0",
 		"prettier": "^2.6.2",
 		"raw-loader": "^4.0.2",
 		"react-icons": "^4.3.1",

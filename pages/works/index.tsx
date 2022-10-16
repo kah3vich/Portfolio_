@@ -1,10 +1,10 @@
+import { Animation } from '@/components';
+import { API_HOST } from '@/constant';
+import Layout from '@/layout/';
+import type { worksList, worksObj } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai';
-import Animation from '../../components/Animation';
-import { API_HOST } from '../../constant';
-import Layout from '../../layout/Layout';
-import type { worksList, worksObj } from '../../types';
 
 export const getStaticProps = async () => {
 	try {

@@ -1,8 +1,5 @@
+import { IArrowRightProps } from '@/types';
 import React from 'react';
-
-export interface IArrowRightProps {
-	color?: string;
-}
 
 const _ArrowRight: React.FC<IArrowRightProps> = props => {
 	const { color = 'black' } = props;
