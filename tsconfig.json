@@ -19,7 +19,6 @@
 			"@/components": ["components/index.ts"],
 			"@/__mocks__": ["__mocks__/index.ts"],
 			"@/pages/*": ["pages/*"],
-			"@/styles": ["styles/globals.scss"],
 			"@/types": ["types/index.ts"],
 			"@/constant": ["constant/index.ts"],
 			"@/hooks": ["hooks/index.ts"],
@@ -34,7 +33,7 @@
 		"pages/api/info/index.js",
 		"pages/api/info/[id].js",
 		"pages/api/data/info.js",
-		"hooks/useTheme/index.ts",
+		"hooks/useTheme/index.js",
 		"components/Animation/index.tsx"
 	],
 	"exclude": ["node_modules"]

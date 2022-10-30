@@ -1,4 +1,4 @@
-import { SERVICE_LINK } from '@/constant';
+import { NORMALIZE_CSS, SERVICE_LINK } from '@/constant';
 import type { IHeadsProps } from '@/types';
 import Head from 'next/head';
 import React, { FC } from 'react';
@@ -22,11 +22,8 @@ const _Heads: FC<IHeadsProps> = props => {
 			<meta name='og:title' content='Kahevich Portfolio' />
 			<meta property='og:type' content='website' />
 			<meta property='og:image' content={`${SERVICE_LINK}/card.jpg`} />
-			<title>{title ?? '-'}</title>
-			<link
-				rel='stylesheet'
-				href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
-			/>
+			<title>{title || '-'}</title>
+			<link rel='stylesheet' href={NORMALIZE_CSS} />
 		</Head>
 	);
 };

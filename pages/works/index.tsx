@@ -1,7 +1,7 @@
 import { Animation } from '@/components';
 import { API_HOST } from '@/constant';
-import Layout from '@/layout/';
-import type { worksList, worksObj } from '@/types';
+import { Layout } from '@/layout';
+// import type { worksList, worksObj } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai';
@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
 	}
 };
 
-const Works = ({ works }: worksObj) => {
+const Works = ({ works }: any) => {
 	if (!works) return null;
 
 	return (
@@ -39,7 +39,7 @@ const Works = ({ works }: worksObj) => {
 					</Animation>
 					<ul className='works__l'>
 						{works &&
-							works.map(({ id, title, photo, description, star }: worksList) => (
+							works.map(({ id, title, photo, description, star }: any) => (
 								<li key={id}>
 									<Animation classN='works__i' delay={0.3 + id * 0.1}>
 										<Link href={`/works/${id}`}>

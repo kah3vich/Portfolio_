@@ -22,7 +22,7 @@ export const info = [
 		photo: '/img/live.jpg',
 		description:
 			'One of the small robot that was aiming to show the current level in the web animation. animations are presented in the project: cursor, scrollbar, appearance of elements, etc.',
-		art: '/live_.png',
+		art: '/img/live_.png',
 		star: 1,
 	},
 	{
@@ -35,7 +35,7 @@ export const info = [
 		photo: '/img/portfolio.png',
 		description:
 			'Final work on programming courses. Project theme - Portfolio. In which various sections are presented, such as: about the author, works, skills. Animation is also applied: glitch effect, smooth scrolling, etc.',
-		art: '/portfolio_.png',
+		art: '/img/portfolio_.png',
 		star: 1,
 	},
 	{
@@ -48,7 +48,7 @@ export const info = [
 		photo: '/img/togo.png',
 		description:
 			'A project for the company TOGO (Brands), which develops and promotes goods on famous marketplaces. In this work, we also present custom work, on the pages - about the company.',
-		art: '/togo_.png',
+		art: '/img/togo_.png',
 		star: 0,
 	},
 	{
@@ -61,7 +61,7 @@ export const info = [
 		photo: '/img/pitstop.png',
 		description:
 			'A project for a chain of auto repair shops that works on machine tools. This project used a lot of animation and implementation of a custom constructor to select the color of the car and disks for it, on the page - the designer.',
-		art: '/pitstop_.png',
+		art: '/img/pitstop_.png',
 		star: 1,
 	},
 	{
@@ -74,7 +74,7 @@ export const info = [
 		photo: '/img/tracklove.png',
 		description:
 			'A project for a service that, through python bots, tracks the latest messages in a person`s social networks through api and provides analytics on a page from a person`s social network, social networks: vkontakte, tinder and ints.',
-		art: '/tracklove_.png',
+		art: '/img/tracklove_.png',
 		star: 0,
 	},
 ];
