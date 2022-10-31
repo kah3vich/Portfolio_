@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // Three JS - 3D Animation
 import { gsap } from 'gsap';
 import * as THREE from 'three';
 
 // Shaders
-import React from 'react';
 import fragment from '../../shaders/fragment.glsl';
 import vertex from '../../shaders/vertex.glsl';
 

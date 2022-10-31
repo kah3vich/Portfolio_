@@ -1,4 +1,4 @@
-import { IHomePageMocks } from '@/types';
+import type { IHomePageMocks } from '@/types';
 import { AiOutlineCodepen } from 'react-icons/ai';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { IoLogoGithub } from 'react-icons/io5';

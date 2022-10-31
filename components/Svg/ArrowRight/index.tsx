@@ -1,4 +1,4 @@
-import { IArrowRightProps } from '@/types';
+import type { IArrowRightProps } from '@/types';
 import React from 'react';
 
 const _ArrowRight: React.FC<IArrowRightProps> = props => {

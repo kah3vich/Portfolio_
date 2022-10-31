@@ -1,5 +1,5 @@
 import { Heads } from '@/components';
-import { ILayoutProps } from '@/types';
+import type { ILayoutProps } from '@/types';
 import React, { FC } from 'react';
 
 const _Layout: FC<ILayoutProps> = props => {

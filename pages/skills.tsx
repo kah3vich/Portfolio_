@@ -32,7 +32,7 @@ const Skills: FC = () => {
 											<div
 												className='skills__bar'
 												style={{
-													width: bar === true ? `${progress}%` : '0%',
+													width: bar ? `${progress}%` : '0%',
 												}}
 											></div>
 										</div>

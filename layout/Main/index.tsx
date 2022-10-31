@@ -1,4 +1,4 @@
-import { IMainProps } from '@/types';
+import type { IMainProps } from '@/types';
 import React, { FC } from 'react';
 
 const _Main: FC<IMainProps> = props => {

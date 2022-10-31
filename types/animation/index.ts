@@ -1,5 +1,5 @@
 export interface IAnimationProps {
-	children?: React.ReactNode;
+	children: React.ReactNode;
 	delay?: number;
 	classN?: string;
 }

@@ -1,12 +1,13 @@
 import { Fonts, Footer, Header, SceneTJ } from '@/components';
 import { Main } from '@/layout';
+import { motionVariableAnimation } from '@/__mocks__';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
-import { VFC } from 'react';
+import { FC } from 'react';
 import '../styles/globals.scss';
 
-const MyApp: VFC<AppProps> = props => {
+const MyApp: FC<AppProps> = props => {
 	const { Component, pageProps, router } = props;
 
 	return (
@@ -28,17 +29,7 @@ const MyApp: VFC<AppProps> = props => {
 						initial='pageInitial'
 						animate='pageAnimation'
 						exit='pageExit'
-						variants={{
-							pageInitial: {
-								opacity: 0,
-							},
-							pageAnimation: {
-								opacity: 1,
-							},
-							pageExit: {
-								opacity: 0,
-							},
-						}}
+						variants={motionVariableAnimation}
 					>
 						<Component {...pageProps} />
 					</motion.div>

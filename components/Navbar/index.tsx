@@ -1,35 +1,30 @@
 import { Theme } from '@/components';
-import { INavbarNavigation } from '@/types';
+import type { INavbarNavigation } from '@/types';
+import { navBarPageMocks } from '@/__mocks__';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-import { IoLogoGithub } from 'react-icons/io5';
-
-const navigation: INavbarNavigation[] = [
-	{ id: 1, title: 'Works', path: '/works' },
-	{ id: 2, title: 'Skills', path: '/skills' },
-];
 
 const _Navbar: FC = () => {
 	const { pathname } = useRouter();
 
 	return (
 		<nav className='containers navbar'>
-			<Link href='/'>
+			<Link href={navBarPageMocks.main.link}>
 				<a className='navbar__l'>
-					<h1>Kah3vich</h1>
+					<h1>{navBarPageMocks.main.title}</h1>
 				</a>
 			</Link>
 			<div className='navbar__b'>
-				{navigation.map(({ id, title, path }: INavbarNavigation) => (
+				{navBarPageMocks.navigation.map(({ id, title, path }: INavbarNavigation) => (
 					<Link key={id} href={path}>
 						<a className={`navbar__link ${pathname === path ? 'navbar__a' : ''}`}>{title}</a>
 					</Link>
 				))}
-				<Link href='https://github.com/kah3vich'>
+				<Link href={navBarPageMocks.other.link}>
 					<a target='_blank' className='navbar__p'>
-						<IoLogoGithub />
-						Github
+						{React.createElement(navBarPageMocks.other.icon, {})}
+						{navBarPageMocks.other.title}
 					</a>
 				</Link>
 			</div>

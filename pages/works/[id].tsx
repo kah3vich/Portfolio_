@@ -1,12 +1,14 @@
 import { Animation } from '@/components';
 import { API_HOST } from '@/constant';
 import { Layout } from '@/layout';
-import type { workObj } from '@/types';
+import { IWorkProps, TGetServerSidePropsWork } from '@/types';
+import { workPageMocks } from '@/__mocks__';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FC } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 
-export const getServerSideProps = async (context: { params: { id: number } }) => {
+export const getServerSideProps = async (context: TGetServerSidePropsWork) => {
 	const { id } = context.params;
 
 	const response = await fetch(`${API_HOST}/info/${id}`, {
@@ -30,7 +32,9 @@ export const getServerSideProps = async (context: { params: { id: number } }) =>
 	};
 };
 
-const Work = ({ work }: workObj) => {
+const Work: FC<IWorkProps> = props => {
+	const { work } = props;
+
 	if (!work) return null;
 
 	return (
@@ -39,9 +43,8 @@ const Work = ({ work }: workObj) => {
 				<div className='work'>
 					<Animation classN='work__h'>
 						<Link href='/works'>
-							<a className='work__link'>Works</a>
+							<a className='work__link'>{workPageMocks.title}</a>
 						</Link>
-
 						<FiChevronRight />
 						<h1 className='work__t'>{work.title}</h1>
 						<p className='work__year'>{work.year}</p>
@@ -51,17 +54,17 @@ const Work = ({ work }: workObj) => {
 					</Animation>
 					<Animation classN='work__i' delay={0.6}>
 						<div className='work__items'>
-							<span>WEBSITE</span>
+							<span>{workPageMocks.website}</span>
 							<Link href={`${work.website}`}>
 								<a target='_blank'>{work.website}</a>
 							</Link>
 						</div>
 						<div className='work__items'>
-							<span>PLATFORM</span>
+							<span>{workPageMocks.platform}</span>
 							<p>{work.platform}</p>
 						</div>
 						<div className='work__items'>
-							<span>STACK</span>
+							<span>{workPageMocks.stack}</span>
 							<p>{work.stack}</p>
 						</div>
 					</Animation>
