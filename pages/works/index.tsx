@@ -14,11 +14,11 @@ export const getStaticProps = async () => {
 		const data = await response.json();
 
 		return {
-			props: { works: data },
+			props: { works: data }
 		};
 	} catch {
 		return {
-			props: { works: null },
+			props: { works: null }
 		};
 	}
 };
@@ -43,7 +43,7 @@ const Works: FC<IWorksProps> = props => {
 										<Link href={`/works/${el.id}`}>
 											<a className='works__w'>
 												<div className='works__p'>
-													{el.star == 1 && <AiFillStar />}
+													{el.star === 1 && <AiFillStar />}
 													<Image
 														alt='Picture'
 														layout='fill'
