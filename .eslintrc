@@ -3,14 +3,18 @@
 	"extends": [
 		"next",
 		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"prettier"
 	],
 	"env": {
-		"browser": true
+		"es6": true,
+		"browser": true,
+		"node": true
 	},
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": { "project": ["./tsconfig.json"] },
-	"plugins": ["@typescript-eslint"],
+	"plugins": ["@typescript-eslint", "prettier", "import"],
 	"rules": {
 		"@typescript-eslint/strict-boolean-expressions": [
 			2,
@@ -19,20 +23,22 @@
 				"allowNumber": false
 			}
 		],
+		"no-var": "error",
+		"semi": "error",
+		"indent": "error",
+		"no-multi-spaces": "error",
+		"space-in-parens": "error",
+		"no-multiple-empty-lines": "error",
+		"prefer-const": "error",
+		"no-use-before-define": "error",
 		"eqeqeq": "warn",
 		"strict": "off",
-		// enable additional rules
-		"indent": ["error", 4],
-		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "backtick"],
-		"semi": ["error", "always"],
-
-		// override configuration set by extending "eslint:recommended"
 		"no-empty": "warn",
 		"no-cond-assign": ["error", "always"],
-
-		// disable rules from base configurations
-		"for-direction": "off"
+		"for-direction": "off",
+		"no-debugger": "off",
+		"no-console": 0
 	},
 	"ignorePatterns": ["components/Fonts/index.tsx"]
 }
