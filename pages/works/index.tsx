@@ -39,7 +39,7 @@ const Works: FC<IWorksProps> = props => {
 						{works &&
 							works.map(el => (
 								<li key={el.id}>
-									<Animation classN='works__i' delay={0.3 + el.id * 0.1}>
+									<Animation className='works__i' delay={0.3 + el.id * 0.1}>
 										<Link href={`/works/${el.id}`}>
 											<a className='works__w'>
 												<div className='works__p'>

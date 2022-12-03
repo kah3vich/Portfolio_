@@ -1,1 +1,6 @@
 /components/Fonts/index.tsx
+/tailwind.config.js
+/next.config.js
+/glsl.d.ts
+/next-env.d.ts
+/postcss.config.js

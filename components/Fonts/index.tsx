@@ -1,7 +1,7 @@
 import { FONT_LINK } from '@/constant';
-import React, { FC } from 'react';
+import React from 'react';
 
-const _Fonts: FC = () => (
+const _Fonts: React.FC = () => (
 	<style jsx global>{`
 		@import url('${FONT_LINK}');
 	`}</style>

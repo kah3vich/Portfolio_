@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-	// swcMinify: true,
 	reactStrictMode: false,
-	webpack: (config, options) => {
+	webpack: config => {
 		config.module.rules.push({
 			test: /\.glsl$/,
-			// use: ['raw-loader', 'glslify-loader'],
-			use: 'raw-loader',
-		})
+			use: 'raw-loader'
+		});
 
-		return config
-	},
-}
+		return config;
+	}
+};

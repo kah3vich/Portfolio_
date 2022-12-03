@@ -1,165 +1,165 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 // Three JS - 3D Animation
-import { gsap } from "gsap";
-import * as THREE from "three";
+import { gsap } from 'gsap';
+import * as THREE from 'three';
 
 // Shaders
-import fragment from "../../shaders/fragment.glsl";
-import vertex from "../../shaders/vertex.glsl";
+import fragment from '../../shaders/fragment.glsl';
+import vertex from '../../shaders/vertex.glsl';
 
 const _SceneTJ = () => {
-    const [loadings_, setLoadings_] = useState<boolean>(false);
+	const [loadings_, setLoadings_] = useState<boolean>(false);
 
-    const sceneContainers = useRef<HTMLDivElement>(null);
+	const sceneContainers = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLoadings_(true);
-        }, 1800);
-    }, []);
+	useEffect(() => {
+		setTimeout(() => {
+			setLoadings_(true);
+		}, 1800);
+	}, []);
 
-    // link canvas 3D animation
-    const __three = useRef<HTMLCanvasElement>(null);
+	// link canvas 3D animation
+	const __three = useRef<HTMLCanvasElement>(null);
 
-    // 3D animation - threejs
-    useEffect(() => {
-        // Canvas
-        const canvas = __three.current;
+	// 3D animation - threejs
+	useEffect(() => {
+		// Canvas
+		const canvas = __three.current;
 
-        // Scene
-        const scene = new THREE.Scene();
+		// Scene
+		const scene = new THREE.Scene();
 
-        // Objects
-        const geometry = new THREE.IcosahedronGeometry(4, 32);
+		// Objects
+		const geometry = new THREE.IcosahedronGeometry(4, 32);
 
-        // Materials
+		// Materials
 
-        const material = new THREE.ShaderMaterial({
-            uniforms: {
-                time: { value: 0 },
-                u_factor: { value: 0.5 },
-                u_opacity: { value: 0 }
-            },
-            vertexShader: vertex,
-            fragmentShader: fragment
-        });
+		const material = new THREE.ShaderMaterial({
+			uniforms: {
+				time: { value: 0 },
+				u_factor: { value: 0.5 },
+				u_opacity: { value: 0 }
+			},
+			vertexShader: vertex,
+			fragmentShader: fragment
+		});
 
-        // Mesh
-        const sphere = new THREE.Points(geometry, material);
-        sphere.scale.set(0.5, 0.5, 0.5);
-        scene.add(sphere);
+		// Mesh
+		const sphere = new THREE.Points(geometry, material);
+		sphere.scale.set(0.5, 0.5, 0.5);
+		scene.add(sphere);
 
-        // Sizes
-        const sizes = {
-            width: window.innerWidth,
-            height: window.innerHeight
-        };
+		// Sizes
+		const sizes = {
+			width: window.innerWidth,
+			height: window.innerHeight
+		};
 
-        window.addEventListener("resize", () => {
-            // Update sizes
-            if (sceneContainers.current) {
-                sizes.width = sceneContainers.current.clientWidth;
-                sizes.height = sceneContainers.current.clientHeight;
-            }
+		window.addEventListener('resize', () => {
+			// Update sizes
+			if (sceneContainers.current) {
+				sizes.width = sceneContainers.current.clientWidth;
+				sizes.height = sceneContainers.current.clientHeight;
+			}
 
-            // Update camera
-            camera.aspect = 1.5;
-            if (window.innerHeight < 610) {
-                camera.updateProjectionMatrix();
-            }
+			// Update camera
+			camera.aspect = 1.5;
+			if (window.innerHeight < 610) {
+				camera.updateProjectionMatrix();
+			}
 
-            // Update renderer
-            // renderer.setSize(1440, 630)
-        });
+			// Update renderer
+			// renderer.setSize(1440, 630)
+		});
 
-        // Camera
-        const camera = new THREE.PerspectiveCamera(
-            50,
-            sizes.width / sizes.height,
-            0.001,
-            100
-        );
-        camera.position.x = 0;
-        camera.position.y = 0;
-        camera.position.z = 6;
-        camera.updateProjectionMatrix();
-        scene.add(camera);
+		// Camera
+		const camera = new THREE.PerspectiveCamera(
+			50,
+			sizes.width / sizes.height,
+			0.001,
+			100
+		);
+		camera.position.x = 0;
+		camera.position.y = 0;
+		camera.position.z = 6;
+		camera.updateProjectionMatrix();
+		scene.add(camera);
 
-        // Renderer
-        const renderer = new THREE.WebGLRenderer({
-            antialias: true,
-            alpha: true,
-            canvas: canvas as THREE.OffscreenCanvas
-        });
-        renderer.setSize(1440, 630);
-        renderer.setClearColor(0x000000, 0);
+		// Renderer
+		const renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			alpha: true,
+			canvas: canvas as THREE.OffscreenCanvas
+		});
+		renderer.setSize(1440, 630);
+		renderer.setClearColor(0x000000, 0);
 
-        // Animation
+		// Animation
 
-        if (sceneContainers.current) {
-            sceneContainers.current.addEventListener("mousemove", () => {
-                gsap.to(material.uniforms.u_factor, {
-                    value: 1.0
-                });
-                gsap.to(camera.position, {
-                    duration: 0.3,
-                    ease: "Expo.ease",
-                    z: 10
-                });
-            });
+		if (sceneContainers.current) {
+			sceneContainers.current.addEventListener('mousemove', () => {
+				gsap.to(material.uniforms.u_factor, {
+					value: 1.0
+				});
+				gsap.to(camera.position, {
+					duration: 0.3,
+					ease: 'Expo.ease',
+					z: 10
+				});
+			});
 
-            sceneContainers.current.addEventListener("mouseout", () => {
-                gsap.to(material.uniforms.u_factor, {
-                    value: 0.5
-                });
-                gsap.to(camera.position, {
-                    duration: 0.3,
-                    ease: "Expo.ease",
-                    z: 6
-                });
-            });
-        }
+			sceneContainers.current.addEventListener('mouseout', () => {
+				gsap.to(material.uniforms.u_factor, {
+					value: 0.5
+				});
+				gsap.to(camera.position, {
+					duration: 0.3,
+					ease: 'Expo.ease',
+					z: 6
+				});
+			});
+		}
 
-        const clock = new THREE.Clock();
+		const clock = new THREE.Clock();
 
-        // Render
+		// Render
 
-        const render_ = () => {
-            camera.lookAt(scene.position);
-            renderer.render(scene, camera);
+		const render_ = () => {
+			camera.lookAt(scene.position);
+			renderer.render(scene, camera);
 
-            material.uniforms.time.value = clock.getElapsedTime();
+			material.uniforms.time.value = clock.getElapsedTime();
 
-            // Update objects
-            sphere.rotation.y += 0.005;
-            sphere.rotation.x += 0.003;
+			// Update objects
+			sphere.rotation.y += 0.005;
+			sphere.rotation.x += 0.003;
 
-            // reRender
-            requestAnimationFrame(() => {
-                render_();
-            });
-        };
+			// reRender
+			requestAnimationFrame(() => {
+				render_();
+			});
+		};
 
-        render_();
-    }, []);
+		render_();
+	}, []);
 
-    return (
-        <div className='containers'>
-            <div className='scenetj' ref={sceneContainers}>
-                <div className='loader' style={{ opacity: loadings_ ? "0" : "1" }}>
-                    <div className='ball'></div>
-                    <div className='ball'></div>
-                    <div className='ball'></div>
-                </div>
-                <canvas
-                    id='__three'
-                    ref={__three}
-                    style={{ opacity: loadings_ ? "1" : "0" }}
-                ></canvas>
-            </div>
-        </div>
-    );
+	return (
+		<div className='containers'>
+			<div className='scenetj' ref={sceneContainers}>
+				<div className='loader' style={{ opacity: loadings_ ? '0' : '1' }}>
+					<div className='ball'></div>
+					<div className='ball'></div>
+					<div className='ball'></div>
+				</div>
+				<canvas
+					id='__three'
+					ref={__three}
+					style={{ opacity: loadings_ ? '1' : '0' }}
+				></canvas>
+			</div>
+		</div>
+	);
 };
 
 export const SceneTJ = React.memo(_SceneTJ);
