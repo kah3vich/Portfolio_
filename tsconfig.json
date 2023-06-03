@@ -16,13 +16,13 @@
 		"incremental": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/components": ["components/index.ts"],
-			"@/__mocks__": ["__mocks__/index.ts"],
-			"@/pages/*": ["pages/*"],
-			"@/types": ["types/index.ts"],
-			"@/constant": ["constant/index.ts"],
-			"@/hooks": ["hooks/index.ts"],
-			"@/layout": ["layout/index.ts"]
+			"@/app/*": ["./src/app/*"],
+			"@/processes/*": ["./src/processes/*"],
+			"@/pages/*": ["./src/pages/*"],
+			"@/widgets/*": ["./src/widgets/*"],
+			"@/entities/*": ["./src/entities/*"],
+			"@/shared/*": ["./src/shared/*"],
+			"@/public/*": ["./public/*"]
 		}
 	},
 	"include": ["**/*.ts", "**/*.tsx", "components/SceneTJ/index.jsx"],

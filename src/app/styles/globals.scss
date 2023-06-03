@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~normalize.css/normalize.css';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
+@layer base {
+	html,
+	body {
+		@apply p-0 m-0 box-border scroll-smooth;
+
+		&::-webkit-scrollbar {
+			@apply w-0;
+		}
+		&::-webkit-scrollbar-track {
+			@apply shadow shadow-transparent border-solid border-8 border-transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			@apply shadow shadow-transparent border-solid border-8 border-transparent;
+		}
+	}
+
+	body {
+		@apply font-sans bg-white transition-all;
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p {
+		margin: 0;
+	}
+
+	/*| |*/
+
+	.dark .logo g {
+		fill: #000000;
+		@apply transition-all;
+	}
+}
